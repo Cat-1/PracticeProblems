@@ -1,0 +1,14 @@
+public class Solution {
+    public bool IsPalindrome(string s) {
+        if(s == "") return true;
+        if(s.Length == 1) return true;
+        else{
+            var lowerCase = s.ToLower();
+            char[] array =   lowerCase.Where(c => (char.IsLetterOrDigit(c))).ToArray();
+            var left = new String(array);
+            Array.Reverse(array);
+            var right = new String(array);
+            return left == right;
+        }
+    }
+}
